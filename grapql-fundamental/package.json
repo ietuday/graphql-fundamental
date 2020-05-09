@@ -22,7 +22,7 @@
     "graphql-tools": "^2.21.0",
     "mongoose": "^5.0.9",
     "nodemon": "^1.17.1",
-    "sequelize": "^4.35.2",
+    "sequelize": "^5.15.1",
     "sqlite3": "^3.1.13"
   }
 }
