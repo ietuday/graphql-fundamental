@@ -1,7 +1,7 @@
 import {makeExecutableSchema} from 'graphql-tools';
 import {resolvers} from './resolvers';
 
-const typeDefs = `
+const tyepDefs = `
 type HackerNewsItem {
     id: String
     text: String
@@ -25,9 +25,9 @@ enum Gender{
     OTHER
 }
  type Query {
-   getItem(id: ID!): HackerNewsItem
+   item: HackerNewsItem
    getUser(id: ID): User
-   getUsers: [User]
+   users: [User]
  }
  input HackerNewsItemInput{
     id: String
@@ -44,15 +44,12 @@ enum Gender{
     email: String
     age: Int!
     gender: Gender
-    items: [ID!]
+    items: [HackerNewsItemInput]
  }
  type Mutation{
      createUser(input: UserInput) : User
-     updateUser(input: UserInput) : User
-     deleteUser(id: ID!): User
-     createItem(input: HackerNewsItemInput) : HackerNewsItem
  }
 `;
 const schema = makeExecutableSchema({typeDefs, resolvers})
 
-export default schema;
+export default {schema};
